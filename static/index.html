@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryoku OS - AI Tutor & Goal Planner</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Floating background particles -->
+  <div id="particles"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">R</div>
+      <div class="nav-logo-text">RYOKU</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#demo">AI Chat</a></li>
+      <li><a href="#how">How it Works</a></li>
+      <li><a href="/docs" target="_blank" style="color:var(--gold)">API Docs</a></li>
+    </ul>
+    <a href="#demo" class="nav-btn">TRY RYOKU AI</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero">
+    <div class="hero-badge fade-up">
+      <span></span> RYOKU ENGINE v2.2 ONLINE
+    </div>
+    <h1 class="hero-title fade-up">
+      YOUR AI <span>TUTOR</span> &amp;<br />
+      GOAL <span>PLANNER</span>
+    </h1>
+    <p class="hero-subtitle fade-up">
+      Generate detailed study plans, conquer daily tasks with gamified progression, 
+      and chat with an unrestricted, context-aware AI coach. Built for the ambitious.
+    </p>
+    <div class="hero-actions fade-up">
+      <a href="#demo" class="btn-primary">
+        <i class="fas fa-play"></i> TEST AI
+      </a>
+      <a href="#features" class="btn-secondary">EXPLORE</a>
+    </div>
+
+    <!-- Terminal Mockup (Animated) -->
+    <div class="terminal-mockup fade-up">
+      <div class="terminal-bar">
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+        <div class="terminal-title">ryoku_cli ~ status</div>
+      </div>
+      <div class="terminal-body" id="term-typing">
+        <!-- JS will type here -->
+      </div>
+    </div>
+  </header>
+
+  <hr class="divider"/>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="section-label">SYSTEM CAPABILITIES</div>
+    <h2 class="section-title">Upgrade Your Learning.</h2>
+    <p class="section-sub">Ryoku isn't just a chatbot. It's a complete operating system for your personal growth.</p>
+    
+    <div class="features-grid">
+      <div class="feature-card fade-up" style="--blue-accent: #00D4FF;">
+        <i class="feature-icon fas fa-brain" style="color:#00D4FF"></i>
+        <h3 class="feature-title">Unrestricted AI</h3>
+        <p class="feature-desc">Chat about anything. Coding, history, fitness, or philosophy. Ryoku adapts to your language naturally.</p>
+      </div>
+      <div class="feature-card fade-up" style="--blue-accent: #FFD700;">
+        <i class="feature-icon fas fa-bullseye" style="color:#FFD700"></i>
+        <h3 class="feature-title">Smart Goal Planning</h3>
+        <p class="feature-desc">Input your goal and let the RyokuOS engine generate a day-by-day JSON plan tailored to your difficulty level.</p>
+      </div>
+      <div class="feature-card fade-up" style="--blue-accent: #00FF41;">
+        <i class="feature-icon fas fa-gamepad" style="color:#00FF41"></i>
+        <h3 class="feature-title">Gamified Growth</h3>
+        <p class="feature-desc">Earn XP by completing generated lessons, tests, and boss challenges. See your progress through pixel bars.</p>
+      </div>
+      <div class="feature-card fade-up" style="--blue-accent: #FF6B6B;">
+        <i class="feature-icon fas fa-microphone" style="color:#FF6B6B"></i>
+        <h3 class="feature-title">Voice &amp; Context</h3>
+        <p class="feature-desc">Talk to Ryoku using your voice, reply to specific messages, and ask Ryoku to instantly edit your tasks.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- Chat Demo Section -->
+  <section id="demo">
+    <div class="section-label">LIVE PREVIEW</div>
+    <h2 class="section-title">Chat with Ryoku.</h2>
+    <p class="section-sub">Configure the AI persona and ask a question. This connects directly to the live Ryoku Tutor API.</p>
+
+    <div class="chat-demo-wrapper">
+      
+      <!-- Side Info -->
+      <div class="chat-side fade-up">
+        <p style="font-size:12px; color:var(--muted); margin-bottom:16px;">
+          Select a persona context:
+        </p>
+        <div style="display:flex; gap:8px; margin-bottom:24px;">
+          <button class="persona-btn active" data-mode="study">📚 Professor</button>
+          <button class="persona-btn" data-mode="life">🌟 Coach</button>
+          <button class="persona-btn" data-mode="fitness">💪 Trainer</button>
+        </div>
+
+        <p style="font-size:12px; color:var(--muted); margin-bottom:16px;">
+          Or try a quick prompt:
+        </p>
+        <button class="quick-msg-btn" onclick="sendQuick('Who are you and what can you do?')">
+          <span class="icon">🤖</span> Who are you?
+        </button>
+        <button class="quick-msg-btn" onclick="sendQuick('How do I stop procrastinating? Give me 3 steps.')">
+          <span class="icon">⚡️</span> Stop Procrastinating
+        </button>
+        <button class="quick-msg-btn" onclick="sendQuick('كيف أبدأ أتعلم بايثون من الصفر؟')">
+          <span class="icon">🐍</span> كيف أتعلم بايثون؟
+        </button>
+      </div>
+
+      <!-- Chat UI -->
+      <div class="chat-window fade-up">
+        <div class="chat-header">
+          <div class="chat-avatar" id="chat-emoji">📚</div>
+          <div>
+            <div class="chat-name" id="chat-title">Professor Ryoku</div>
+            <div class="chat-status">System Online</div>
+          </div>
+        </div>
+        
+        <div class="chat-messages" id="chat-box">
+          <div class="msg msg-ai">
+            <div class="msg-label">RYOKU</div>
+            <div class="msg-bubble">Hey! I'm Ryoku ⚔️<br><br>I'm connected to the live API. Ask me anything, or change my persona using the buttons on the left.</div>
+          </div>
+        </div>
+
+        <div class="chat-input-bar">
+          <input type="text" id="chat-input" placeholder="Ask Ryoku..." autocomplete="off"/>
+          <button class="chat-send-btn" id="chat-send">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- Architecture / Stats -->
+  <section id="stats">
+    <div class="section-label">THE ENGINE</div>
+    <h2 class="section-title">Built for Performance.</h2>
+    <div class="stats-grid">
+      <div class="stat-card fade-up">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">OFFLINE EXPORT</span>
+      </div>
+      <div class="stat-card fade-up">
+        <span class="stat-number">&lt;2s</span>
+        <span class="stat-label">AI RESPONSE TIME</span>
+      </div>
+      <div class="stat-card fade-up">
+        <span class="stat-number">JSON</span>
+        <span class="stat-label">STRICT PLAN PARSING</span>
+      </div>
+      <div class="stat-card fade-up">
+        <span class="stat-number">2L</span>
+        <span class="stat-label">BILINGUAL (AR/EN)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-box fade-up">
+      <div class="cta-badge">REST API AVAILABLE</div>
+      <h2 class="cta-title">Build with Ryoku Tutor API</h2>
+      <p class="cta-sub">
+        The AI engine powering this chat and the mobile app is accessible via standard REST endpoints. Start integrating smart goal generation.
+      </p>
+      <a href="/docs" target="_blank" class="btn-primary" style="margin:0 auto">
+        <i class="fas fa-book"></i> VIEW API DOCS
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">RYOKU OS</div>
+    <p class="footer-sub">AI Planner &amp; Tutor System v2.2</p>
+    <ul class="footer-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="/docs">API (/docs)</a></li>
+      <li><a href="#">Github</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Developed by OSAMAH.</p>
+  </footer>
+
+  <script src="static/main.js"></script>
+</body>
+</html>
