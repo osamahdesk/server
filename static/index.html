@@ -21,7 +21,7 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#demo">AI Chat</a></li>
       <li><a href="#how">How it Works</a></li>
-      <li><a href="/docs" target="_blank" style="color:var(--gold)">API Docs</a></li>
+      <li><a href="#docs" style="color:var(--gold)">API Docs</a></li>
     </ul>
     <a href="#demo" class="nav-btn">TRY RYOKU AI</a>
   </nav>
@@ -256,16 +256,68 @@
     </div>
   </section>
 
+  <!-- Internal Custom API Docs Section -->
+  <section id="docs">
+    <div class="section-label">DEVELOPER PORTAL</div>
+    <h2 class="section-title">Ryoku REST API.</h2>
+    <p class="section-sub">Integrate Ryoku Engine into your own applications. Below are the primary endpoints and usage examples.</p>
+    
+    <div class="chat-demo-wrapper" style="margin-top: 32px; grid-template-columns: 1fr;">
+      
+      <!-- ENDPOINT: /chat -->
+      <div class="chat-window fade-up" style="height: auto; padding: 0; border-color: var(--blue);">
+        <div class="chat-header" style="background:#1e3a5f; border-bottom:2px solid var(--blue);">
+          <span style="background:var(--blue); color:white; padding:4px 8px; border-radius:4px; font-weight:bold; font-size:11px; margin-right:8px;">POST</span>
+          <span style="color:white; font-family:'JetBrains Mono'; font-size:12px;">/chat</span>
+        </div>
+        <div style="padding: 20px;">
+          <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Send a message to the AI and receive a context-aware response.</p>
+          <div style="background:rgba(0,0,0,0.3); padding:16px; border-radius:6px; border:1px solid var(--border); overflow-x:auto;">
+            <p style="color:var(--gold); font-size:10px; font-family:'Press Start 2P'; margin-bottom:12px;">Request Body (JSON)</p>
+<pre style="color:var(--white); font-family:'JetBrains Mono'; font-size:11px;">{
+  "user_id": "unique_user_id_string",
+  "new_message": "Hello Ryoku!",
+  "mode": "study" <span style="color:var(--muted)">// "study", "life", or "fitness"</span>
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENDPOINT: /RyokuOS -->
+      <div class="chat-window fade-up" style="height: auto; padding: 0; border-color: var(--gold);">
+        <div class="chat-header" style="background:#4a4200; border-bottom:2px solid var(--gold);">
+          <span style="background:var(--gold); color:black; padding:4px 8px; border-radius:4px; font-weight:bold; font-size:11px; margin-right:8px;">POST</span>
+          <span style="color:white; font-family:'JetBrains Mono'; font-size:12px;">/RyokuOS</span>
+        </div>
+        <div style="padding: 20px;">
+          <p style="font-size: 11px; color: var(--muted); margin-bottom: 12px;">Generate a strict JSON day-by-day learning/task plan.</p>
+          <div style="background:rgba(0,0,0,0.3); padding:16px; border-radius:6px; border:1px solid var(--border); overflow-x:auto;">
+            <p style="color:var(--gold); font-size:10px; font-family:'Press Start 2P'; margin-bottom:12px;">Request Body (JSON)</p>
+<pre style="color:var(--white); font-family:'JetBrains Mono'; font-size:11px;">{
+  "user_id": "unique_user_id_string",
+  "goal_name": "Learn React.js",
+  "duration_days": 14,
+  "difficulty": "Medium",
+  "importance": "High",
+  "details": "Focus on hooks and context API"
+}</pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CTA -->
   <section id="cta">
     <div class="cta-box fade-up">
-      <div class="cta-badge">REST API AVAILABLE</div>
-      <h2 class="cta-title">Build with Ryoku Tutor API</h2>
+      <div class="cta-badge">SYSTEM COMPLETE</div>
+      <h2 class="cta-title">Ready to Integrate?</h2>
       <p class="cta-sub">
-        The AI engine powering this chat and the mobile app is accessible via standard REST endpoints. Start integrating smart goal generation.
+        The AI engine powering this chat and the mobile app is fully accessible and scalable. Scroll up to the Developer Portal for configurations.
       </p>
-      <a href="/docs" target="_blank" class="btn-primary" style="margin:0 auto">
-        <i class="fas fa-book"></i> VIEW API DOCS
+      <a href="#docs" class="btn-primary" style="margin:0 auto">
+        <i class="fas fa-terminal"></i> BROWSE API DOCS
       </a>
     </div>
   </section>
@@ -285,3 +337,4 @@
   <script src="static/main.js"></script>
 </body>
 </html>
+
