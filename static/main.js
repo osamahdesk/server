@@ -314,7 +314,7 @@ function addSystemMessage(text) {
     div.style.color = 'var(--muted)';
     div.style.margin = '10px 0';
     div.style.fontFamily = "'Press Start 2P', monospace";
-    div.innerText = \`--- \${text} ---\`;
+    div.innerText = `--- ${text} ---`;
     box.appendChild(div);
     box.scrollTop = box.scrollHeight;
 }
