@@ -10,6 +10,7 @@
 <body>
   <!-- Floating background particles -->
   <div id="particles"></div>
+
   <!-- Navigation -->
   <nav>
     <a href="#" class="nav-logo">
@@ -24,6 +25,7 @@
     </ul>
     <a href="#demo" class="nav-btn">TRY RYOKU AI</a>
   </nav>
+
   <!-- Hero Section -->
   <header id="hero">
     <div class="hero-badge fade-up">
@@ -43,6 +45,7 @@
       </a>
       <a href="#features" class="btn-secondary">EXPLORE</a>
     </div>
+
     <!-- Terminal Mockup (Animated) -->
     <div class="terminal-mockup fade-up">
       <div class="terminal-bar">
@@ -56,7 +59,9 @@
       </div>
     </div>
   </header>
+
   <hr class="divider"/>
+
   <!-- Features Section -->
   <section id="features">
     <div class="section-label">SYSTEM CAPABILITIES</div>
@@ -86,12 +91,15 @@
       </div>
     </div>
   </section>
+
   <hr class="divider"/>
+
   <!-- AI Goal Planner Demo -->
   <section id="goal-planner">
     <div class="section-label">TUTOR CORE</div>
     <h2 class="section-title">Generative Goal Builder.</h2>
     <p class="section-sub">Describe a goal, and Ryoku will generate a personalized day-by-day JSON schedule directly from the API.</p>
+
     <div class="chat-demo-wrapper" style="margin-top: 32px">
       <!-- Input Panel -->
       <div class="chat-window fade-up" style="height: auto; padding: 24px; border-color: var(--gold);">
@@ -105,10 +113,12 @@
         
         <label style="font-size: 10px; color: var(--muted); margin-bottom:8px; display:block;">Difficulty (Easy, Medium, Hard)</label>
         <input type="text" id="goal-diff" class="goal-input" value="Medium" style="width:100%; margin-bottom: 24px; background:var(--surface); border:1px solid var(--border); color:var(--white); padding:10px; border-radius:4px; font-family:'JetBrains Mono';">
+
         <button id="goal-generate-btn" class="btn-primary" style="width:100%; justify-content:center;">
           <i class="fas fa-bolt"></i> GENERATE PLAN
         </button>
       </div>
+
       <!-- JSON Output Panel -->
       <div class="chat-window fade-up" style="background:#0a0a14; border-color:var(--gold);">
         <div class="chat-header" style="background:#111520; border-color:var(--gold);">
@@ -124,12 +134,15 @@
       </div>
     </div>
   </section>
+
   <hr class="divider"/>
+
   <!-- Chat Demo Section -->
   <section id="demo">
     <div class="section-label">LIVE PREVIEW</div>
     <h2 class="section-title">Chat with Ryoku.</h2>
     <p class="section-sub">Configure the AI persona and ask a question. This connects directly to the live Ryoku Tutor API.</p>
+
     <div class="chat-demo-wrapper">
       
       <!-- Side Info -->
@@ -142,6 +155,7 @@
           <button class="persona-btn" data-mode="life">🌟 Coach</button>
           <button class="persona-btn" data-mode="fitness">💪 Trainer</button>
         </div>
+
         <p style="font-size:12px; color:var(--muted); margin-bottom:16px;">
           Or try a quick prompt:
         </p>
@@ -155,6 +169,7 @@
           <span class="icon">🐍</span> كيف أتعلم بايثون؟
         </button>
       </div>
+
       <!-- Chat UI -->
       <div class="chat-window fade-up">
         <div class="chat-header">
@@ -171,6 +186,7 @@
             <div class="msg-bubble">Hey! I'm Ryoku ⚔️<br><br>I'm connected to the live API. Ask me anything, or change my persona using the buttons on the left.</div>
           </div>
         </div>
+
         <div class="chat-input-bar">
           <input type="text" id="chat-input" placeholder="Ask Ryoku..." autocomplete="off"/>
           <button class="chat-send-btn" id="chat-send">
@@ -178,9 +194,12 @@
           </button>
         </div>
       </div>
+
     </div>
   </section>
+
   <hr class="divider"/>
+
   <!-- Architecture / Stats -->
   <section id="stats">
     <div class="section-label">THE ENGINE</div>
@@ -204,6 +223,7 @@
       </div>
     </div>
   </section>
+
   <!-- CTA -->
   <section id="cta">
     <div class="cta-box fade-up">
@@ -217,6 +237,7 @@
       </a>
     </div>
   </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-logo">RYOKU OS</div>
@@ -228,6 +249,7 @@
     </ul>
     <p class="footer-copy">© 2026 Developed by OSAMAH.</p>
   </footer>
+
   <script src="static/main.js"></script>
 </body>
 </html>
